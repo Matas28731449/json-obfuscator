@@ -1,13 +1,16 @@
-#include "nlohmann/json.hpp"
-#include <iostream>
-#include <fstream>
-
-using json = nlohmann::json;
-using namespace std;
+#include "lib.hpp"
 
 int main(int argc, char **argv) {
+    // INPUT
+    ifstream in(argv[1]);
 
-    cout << "json library is working\n";
+    json data = json::parse(in);
+    obfuscate(data);
+
+    // OUTPUT
+    string output = data.dump(2);
+    ofstream out(argv[2]);
+    out <<  cleanup(output) << "\n";
 
     return 0;
 }
