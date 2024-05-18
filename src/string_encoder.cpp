@@ -45,7 +45,7 @@ string StringEncoder::encodeToUtf32(string str) {
     wstring_convert<codecvt_utf8<char32_t>, char32_t> convert;
     u32string u32str = convert.from_bytes(str);
     for (char32_t c : u32str) {
-        ss << "U+" << setfill('0') << setw(8) << hex << static_cast<int>(c);
+        ss << "u+" << setfill('0') << setw(8) << hex << static_cast<int>(c);
     }
     return ss.str();
 }

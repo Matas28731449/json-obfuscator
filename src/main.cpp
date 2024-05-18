@@ -10,10 +10,9 @@ int main(int argc, char *argv[]) {
     }
 
     Encoding encoding = Encoding::UTF16; // default unicode escape sequence format
-    string encodingArg = "utf-16";
 
     if (argc > 3) {
-        encodingArg = argv[3];
+        string encodingArg = argv[3];
         if (encodingArg == "utf-32") {
             encoding = Encoding::UTF32;
         } else if (encodingArg == "utf-16") {
@@ -28,7 +27,7 @@ int main(int argc, char *argv[]) {
 
     JsonEncoder obfuscator(argv[1], argv[2], encoding);
     obfuscator.encodeJson();
-    obfuscator.printEncodings("../maps/replacement_map_" + encodingArg + ".txt");
+    obfuscator.printEncodings("maps/");
 
     return 0;
 }

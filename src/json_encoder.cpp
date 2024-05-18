@@ -22,20 +22,21 @@ void JsonEncoder::encodeJson() {
 }
 
 void JsonEncoder::printEncodings(string path) {
-    string str;
+    string encodingStr;
 
     if (encoding == UTF8) {
-        str = "utf-8";
+        encodingStr = "utf-8";
     } else if (encoding == UTF16) {
-        str = "utf-16";
+        encodingStr = "utf-16";
     } else if (encoding == UTF32) {
-        str = "utf-32";
+        encodingStr = "utf-32";
     }
 
-    ofstream out(path);
+    ofstream out(path + "replacement_map_" + encodingStr + ".txt");
     for (auto str : replacements) {
         out << str.first << " -> " << str.second << "\n";
     }
+    out.close();
 }
 
 void JsonEncoder::jsonToUnicode(json &data) {

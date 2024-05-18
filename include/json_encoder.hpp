@@ -1,7 +1,7 @@
 #ifndef JSON_OBFUSCATOR_H
 #define JSON_OBFUSCATOR_H
 
-#include "../json/single_include/nlohmann/json.hpp"
+#include "../nlohmann/json.hpp"
 #include "string_encoder.hpp"
 
 using json = nlohmann::ordered_json;
