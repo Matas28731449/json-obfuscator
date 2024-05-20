@@ -1,0 +1,5 @@
+if(EXISTS "/Users/mataslekavicius/Developer/json-obfuscator/src/build/tests[1]_tests.cmake")
+  include("/Users/mataslekavicius/Developer/json-obfuscator/src/build/tests[1]_tests.cmake")
+else()
+  add_test(tests_NOT_BUILT tests_NOT_BUILT)
+endif()
