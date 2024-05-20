@@ -13,10 +13,9 @@ class JsonEncoder {
 
         void encodeJson();
         void printEncodings(string path);
-    
+
     private:
-        string   input,
-                 output;
+        string input, output;
         Encoding encoding;
         unordered_map<string, string> replacements;
 

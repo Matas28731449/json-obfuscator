@@ -1,5 +1,5 @@
 compile:
-	g++ -std=c++11 -O3 -w -o main src/main.cpp src/string_encoder.cpp src/json_encoder.cpp
+	g++ -std=c++11 -o main src/main.cpp src/string_encoder.cpp src/json_encoder.cpp
 
 run: compile
 	./main $(ARGS)

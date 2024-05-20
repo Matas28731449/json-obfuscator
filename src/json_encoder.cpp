@@ -5,11 +5,7 @@
 using std::ifstream;
 using std::ofstream;
 
-JsonEncoder::JsonEncoder(string inputFilename, string outputFilename, Encoding encodingType) {
-    input = inputFilename;
-    output = outputFilename;
-    encoding = encodingType;
-};
+JsonEncoder::JsonEncoder(string _input, string _output, Encoding _encoding) : input(_input), output(_output), encoding(_encoding) { }
 
 void JsonEncoder::encodeJson() {
     ifstream in(input);
@@ -49,11 +45,11 @@ void JsonEncoder::jsonToUnicode(json &data) {
 
             jsonToUnicode(value);
 
-            string utf16FormatKey = StringEncoder::stringToUnicode(Encoding::UTF16, key), // standard encoding for json obfuscation
-                   optedFormatKey = StringEncoder::stringToUnicode(encoding, key); // opted encoding for replacements mapping
+            string utf16FormatKey = StringEncoder::stringToUnicode(Encoding::UTF16, key); // standard encoding for json file obfuscation
+            string optedFormatKey = StringEncoder::stringToUnicode(encoding, key); // opted encoding for replacements mapping
             
             replacements[key] = optedFormatKey;
-            temp[utf16FormatKey] = move(value);
+            temp[utf16FormatKey] = std::move(value);
         }
         data = temp;
 
@@ -63,8 +59,8 @@ void JsonEncoder::jsonToUnicode(json &data) {
         }
 
     } else if (data.is_string()) {
-        string utf16FormatVal = StringEncoder::stringToUnicode(Encoding::UTF16, data.get<string>()),
-               optedFormatVal = StringEncoder::stringToUnicode(encoding, data.get<string>());
+        string utf16FormatVal = StringEncoder::stringToUnicode(Encoding::UTF16, data.get<string>());
+        string optedFormatVal = StringEncoder::stringToUnicode(encoding, data.get<string>());
 
         replacements[data.get<string>()] = optedFormatVal;
         data = utf16FormatVal;

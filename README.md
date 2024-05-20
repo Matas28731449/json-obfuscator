@@ -47,14 +47,46 @@ The goal was to write a simple JSON obfuscation tool that would replace the stri
 
 7. Ensure the Unicode encoded JSON object produces the same output as the input object.
 
+8. Use the GoogleTest framework to unit test specific parts of the tool.
+
+## Unit testing
+
+1. Create a `build/` directory inside `src/`:
+
+   ```
+   mkdir src/build
+   ```
+
+2. Go into the `build/` directory:
+
+   ```
+   cd build/
+   ```
+
+3. Generate the necessary build files:
+
+   ```
+   cmake ..
+   ```
+
+4. Build and run the tests:
+   ```
+   make
+   ./tests
+   ```
+
 ## Used tools
 
 [JSON for Modern C++](https://github.com/nlohmann/json)
 
 [Unicode UTF Converter](https://www.coderstool.com/unicode-utf-tools)
 
+[GoogleTest: Google's C++ test framework](https://github.com/google/googletest)
+
 ## References
 
 [Best Practice Object Oriented Programming](https://katrompas.accprofessors.com/best-practice-oop-programming)
 
 [Mastering Unicode in Modern C++: A Comprehensive Guide to Wide Characters, Encodings, and Best Practices](https://www.linkedin.com/pulse/mastering-unicode-modern-c-comprehensive-guide-wide-characters-tariq/)
+
+[How to run tests with GoogleTest framework](https://stackoverflow.com/questions/62910867/how-to-run-tests-and-debug-google-test-project-in-vs-code)
