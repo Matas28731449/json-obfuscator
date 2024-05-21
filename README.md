@@ -16,7 +16,14 @@
    cd json-obfuscator/
    ```
 
-3. Use Makefile to compile:
+3. Initialize and update the submodules (GoogleTest):
+
+   ```
+   git submodule init
+   git submodule update
+   ```
+
+4. Use Makefile to compile:
 
    ```
    make
@@ -74,6 +81,14 @@ The goal was to write a simple JSON obfuscation tool that would replace the stri
    make
    ./tests
    ```
+
+## Improvements for the future
+
+1. Apply an iterative JSON object parsing approach instead of recursive in `jsonToUnicode()`.
+
+2. Use an external library, such as ICU or Boost.Locale, for string encoding.
+
+3. Increase the percentage of covered Unit Tests across the project.
 
 ## Used tools
 

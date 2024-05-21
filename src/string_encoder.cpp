@@ -1,5 +1,4 @@
 #include "../include/string_encoder.hpp"
-
 #include <sstream>
 #include <codecvt>
 #include <iomanip>

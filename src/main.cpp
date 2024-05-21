@@ -2,6 +2,7 @@
 #include <iostream>
 
 using std::cerr;
+using std::cout;
 
 int main(int argc, char *argv[]) {
     if (argc < 3) {
@@ -28,6 +29,8 @@ int main(int argc, char *argv[]) {
     JsonEncoder obfuscator(argv[1], argv[2], encoding);
     obfuscator.encodeJson();
     obfuscator.printEncodings("maps/");
+
+    cout << "Program finished successfully\n";
 
     return 0;
 }

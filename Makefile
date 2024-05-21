@@ -5,4 +5,4 @@ run: compile
 	./main $(ARGS)
 
 clean:
-	rm -f *.o main
+	rm -f *.o main && rm -r src/build
