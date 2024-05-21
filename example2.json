@@ -1,0 +1,38 @@
+{
+    "name": "Test",
+    "age": 30,
+    "married": true,
+    "children": [
+        {
+            "name": "Alice",
+            "age": 5
+        },
+        {
+            "name": "Bob",
+            "age": 3
+        }
+    ],
+    "address": {
+        "street": "1234 Main St",
+        "city": "Anytown",
+        "postal_code": "12345-6789",
+        "coordinates": {
+            "latitude": 37.7749,
+            "longitude": -122.4194
+        }
+    },
+    "favorites": {
+        "colors": ["red", "green", "blue"],
+        "numbers": [7, 42, 3.14],
+        "quotes": [
+            "Life is what happens when you're busy making other plans.",
+            "The only way to do great work is to love what you do.",
+            "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment."
+        ]
+    },
+    "miscellaneous": {
+        "emoji": "😊",
+        "special_chars": "!@#$%^&*()_+-=[]{}|;':\",./<>?",
+        "unicode_string": "こんにちは世界"
+    }
+}
